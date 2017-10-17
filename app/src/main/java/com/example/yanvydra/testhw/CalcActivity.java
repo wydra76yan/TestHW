@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 
 public class CalcActivity extends AppCompatActivity implements View.OnClickListener {
-
+// TODO please rename variables
+// do not use numbers in naming
+// name variables for example :  private TextView mResultTextView;
     private EditText etNum1;
     private EditText etNum2;
     private TextView tvResult;
