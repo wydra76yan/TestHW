@@ -34,7 +34,7 @@ public class CalcActivityRobolectricTest {
     public void test() {
         activityController.create();
         activityController.start();
-        activityController.resume();
+        activityController.resume(); //TODO move this methods in init-method
 
         CalcActivity calcActivity = activityController.get();
 
