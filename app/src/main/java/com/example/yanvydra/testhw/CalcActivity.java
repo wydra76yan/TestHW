@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 public class CalcActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etNum1;
-    private EditText etNum2;
-    private TextView tvResult;
-    private ICalc calcM;
+    private EditText mNumFirstEdit;
+    private EditText mNumSecondEdit;
+    private TextView mResultTextView;
+    private ICalc mCalc;
 
 
     @Override
@@ -22,30 +22,30 @@ public class CalcActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
 
-        calcM = new Calc();
-        etNum1 = (EditText) findViewById(R.id.etNum1);
-        etNum2 = (EditText) findViewById(R.id.etNum2);
-        Button btnAdd = (Button) findViewById(R.id.btnAdd);
-        Button btnSub = (Button) findViewById(R.id.btnSub);
-        tvResult = (TextView) findViewById(R.id.tvResult);
-        btnAdd.setOnClickListener(this);
-        btnSub.setOnClickListener(this);
+        mCalc = new Calc();
+        mNumFirstEdit = (EditText) findViewById(R.id.etNumFirst);
+        mNumSecondEdit = (EditText) findViewById(R.id.etNumSecond);
+        Button mBtnAdd = (Button) findViewById(R.id.btnAdd);
+        Button mBtnSub = (Button) findViewById(R.id.btnSub);
+        mResultTextView = (TextView) findViewById(R.id.tvResult);
+        mBtnAdd.setOnClickListener(this);
+        mBtnSub.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        double num1;
-        double num2;
+        double firstNum;
+        double secondNum;
 
-        num1 = Double.parseDouble(etNum1.getText().toString());
-        num2 = Double.parseDouble(etNum2.getText().toString());
+        firstNum = Double.parseDouble(mNumFirstEdit.getText().toString());
+        secondNum = Double.parseDouble(mNumSecondEdit.getText().toString());
 
         switch (v.getId()) {
             case R.id.btnAdd:
-                tvResult.setText(calcM.add(num1, num2).toString());
+                mResultTextView.setText(mCalc.add(firstNum, secondNum).toString());
                 break;
             case R.id.btnSub:
-                tvResult.setText(calcM.sub(num1, num2).toString());
+                mResultTextView.setText(mCalc.sub(firstNum, secondNum).toString());
                 break;
 
             default:

@@ -14,7 +14,7 @@
         android:layout_marginTop="3pt">
 
         <EditText
-            android:id="@+id/etNum1"
+            android:id="@+id/etNumFirst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="5pt"
@@ -23,7 +23,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/etNum2"
+            android:id="@+id/etNumSecond"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5pt"

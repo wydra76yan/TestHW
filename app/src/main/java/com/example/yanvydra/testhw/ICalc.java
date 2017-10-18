@@ -5,7 +5,7 @@ package com.example.yanvydra.testhw;
  */
 
 public interface ICalc {
-    Double add(double a, double b);
+    Double add(double firstNum, double secondNum);
 
-    Double sub(double a, double b);
+    Double sub(double firstNum, double secondNum);
 }

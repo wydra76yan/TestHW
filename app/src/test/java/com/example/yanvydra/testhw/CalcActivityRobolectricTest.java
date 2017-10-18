@@ -19,34 +19,33 @@ import org.robolectric.annotation.Config;
 @Config(constants = BuildConfig.class, sdk = 26)
 public class CalcActivityRobolectricTest {
 
-    private EditText etNum1;
-    private EditText etNum2;
+    private EditText mNumFirstEdit;
+    private EditText mNumSecondEdit;
     private CalcActivity Activity;
-    private ICalc MCalc;
+    private ICalc mCalc;
     private ActivityController<CalcActivity> activityController;
 
     @Before
     public void init() {
         Activity = Robolectric.setupActivity(CalcActivity.class);
+        activityController.create();
+        activityController.start();
+        activityController.resume();
     }
 
     @Test
     public void test() {
-        activityController.create();
-        activityController.start();
-        activityController.resume();
-
         CalcActivity calcActivity = activityController.get();
 
-         etNum1 = (EditText) calcActivity.findViewById(R.id.etNum1);
-         etNum2 = (EditText) calcActivity.findViewById(R.id.etNum2);
-        TextView tvResult = (TextView) calcActivity.findViewById(R.id.tvResult);
+         mNumFirstEdit = (EditText) calcActivity.findViewById(R.id.etNumFirst);
+         mNumSecondEdit = (EditText) calcActivity.findViewById(R.id.etNumFirst);
+        TextView mResultTextView = (TextView) calcActivity.findViewById(R.id.tvResult);
 
-        etNum1.setText("45");
-        etNum2.setText("54");
+        mNumFirstEdit.setText("45");
+        mNumSecondEdit.setText("54");
         calcActivity.findViewById(R.id.btnAdd).performClick();
 
-        Assert.assertEquals(tvResult.getText().toString(), "99.0");
+        Assert.assertEquals(mResultTextView.getText().toString(), "99.0");
 
 
     }

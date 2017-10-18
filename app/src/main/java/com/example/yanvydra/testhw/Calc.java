@@ -7,13 +7,13 @@ package com.example.yanvydra.testhw;
 public class Calc implements ICalc {
 
     @Override
-    public Double add(double a, double b) {
-        return a + b;
+    public Double add(double firstNum, double secondNum) {
+        return firstNum + secondNum;
     }
 
     @Override
-    public Double sub(double a, double b) {
-        return a - b;
+    public Double sub(double firstNum, double secondNum) {
+        return firstNum - secondNum;
     }
 
     @Override

@@ -19,9 +19,9 @@ public class CalcActivityEspressoTest {
 
     @Test
     public void AddButtonTest(){
-        onView(withId(R.id.etNum1))
+        onView(withId(R.id.etNumFirst))
                 .perform(typeText("5"));
-        onView(withId(R.id.etNum2))
+        onView(withId(R.id.etNumSecond))
                 .perform(typeText("6"));
 
         onView(withId(R.id.btnAdd))
@@ -33,9 +33,9 @@ public class CalcActivityEspressoTest {
 
     @Test
     public void SubButtonTest(){
-        onView(withId(R.id.etNum1))
+        onView(withId(R.id.etNumFirst))
                 .perform(typeText("5"));
-        onView(withId(R.id.etNum2))
+        onView(withId(R.id.etNumSecond))
                 .perform(typeText("6"));
 
         onView(withId(R.id.btnSub))
